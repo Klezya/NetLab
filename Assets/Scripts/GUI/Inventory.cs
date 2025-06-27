@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -17,8 +18,14 @@ public class Inventory : MonoBehaviour
     private GameObject[] slots;
 
     // Referencias a la mano
-    [SerializeField] private PlayerGrab playerGrabRef;
+    [SerializeField] private GameObject playerGrabRef;
 
+
+    void Awake()
+    {
+        inventoryPanel.SetActive(true);
+        inventoryPanel.SetActive(false);
+    }
 
     void Start()
     {
@@ -67,17 +74,19 @@ public class Inventory : MonoBehaviour
 
     public void TryAddItem(InputAction.CallbackContext context)
     {
-        if (context.performed && enabledSlots > 0 && playerGrabRef.grabbedObject.layer == 7)
+        if (playerGrabRef.GetComponent<PlayerGrab>().grabbedObject == null)
         {
-            Item item = playerGrabRef.grabbedObject.GetComponent<Item>();
-            Debug.Log("Intentando agregar al inventario: " + playerGrabRef.grabbedObject.name);
+            return;
+        }
+        else if (context.performed && playerGrabRef.GetComponent<PlayerGrab>().grabbedObject.layer == 7)
+        {
+            Item item = playerGrabRef.GetComponent<PlayerGrab>().grabbedObject.GetComponent<Item>();
 
-            AddItem(playerGrabRef.grabbedObject, item.id, item.type, item.description, item.icon);
-
+            AddItem(playerGrabRef.GetComponent<PlayerGrab>().grabbedObject, item.id, item.type, item.description, item.icon, item.cantidad);
         }
     }
     
-    public void AddItem(GameObject item, int id, string type, string description, Sprite icon)
+    public void AddItem(GameObject item, int id, string type, string description, Sprite icon, int cantidad)
     {
         if (enabledSlots > 0)
         {
@@ -92,18 +101,35 @@ public class Inventory : MonoBehaviour
                     slots[i].GetComponent<Slot>().type = type;
                     slots[i].GetComponent<Slot>().description = description;
                     slots[i].GetComponent<Slot>().icon = icon;
-                    slots[i].GetComponent<Slot>().empty = false;
+                    slots[i].GetComponent<Slot>().cantidad = cantidad;
 
                     // Desactivar el objeto agarrado
-                    item.transform.SetParent(slots[1].transform);
+                    item.transform.SetParent(slots[i].transform);
                     item.SetActive(false);
 
+                    // Actualizar el slot
+                    slots[i].GetComponent<Slot>().empty = false;
+                    slots[i].GetComponent<Slot>().UpdateSlot();
                     enabledSlots--;
-                    Debug.Log("Item agregado al inventario: " + item.name);
+
+                    // Actualizar la referencia del objeto agarrado
+                    playerGrabRef.GetComponent<PlayerGrab>().grabbedObject = null;
+                    return;
+                }
+            }
+        } else
+        {
+            for (int i = 0; i < maxSlots; i++)
+            {
+                if (slots[i].GetComponent<Slot>().id == id)
+                {
+                    // Si el item ya existe, incrementar la cantidad
+                    slots[i].GetComponent<Slot>().item.GetComponent<Item>().cantidad++;
+                    slots[i].GetComponent<Slot>().UpdateSlot();
+                    playerGrabRef.GetComponent<PlayerGrab>().grabbedObject = null;
                     return;
                 }
             }
         }
     }
-
 }
