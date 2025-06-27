@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerGrab : MonoBehaviour
 {
     [SerializeField] private GameObject handPoint;
-    private GameObject grabbedObject = null;
+    public GameObject grabbedObject = null;
 
 
     // Colision del objeto que se va a agarrar
@@ -30,7 +30,6 @@ public class PlayerGrab : MonoBehaviour
         {
             isColliding = true;
             collidingObject = other.gameObject;
-            Debug.Log("Objeto colisionado: " + collidingObject.name);
         }
         
     }
@@ -41,7 +40,6 @@ public class PlayerGrab : MonoBehaviour
         {
             isColliding = false;
             collidingObject = null;
-            Debug.Log("Objeto salido de colision: " + other.gameObject.name);
         }
     }
 
