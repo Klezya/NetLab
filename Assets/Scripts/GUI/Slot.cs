@@ -9,22 +9,36 @@ public class Slot : MonoBehaviour
 
 
     [SerializeField] private GameObject item;
-    [SerializeField] private int id;
-    [SerializeField] private string type;
-    [SerializeField] private Transform spawnPoint;
-
-
-
-    void Awake()
-    {
-
-    }
+    [SerializeField] private Transform handPoint;
+    [SerializeField] private GameObject hand;
+    [SerializeField] private GameObject warningText;
 
 
 
     public void OnClick()
     {
-        Debug.Log("Slot clicked: " + item);
-        GameObject newItem = Instantiate(item, spawnPoint.position, spawnPoint.rotation);
+        if (hand.GetComponent<PlayerGrab>().grabbedObject != null)
+        {
+            Debug.Log("You already have an item in your hand");
+            warningText.GetComponent<WarningText>().InitFade();
+            return;
+        }
+        if (item.GetComponent<Item>().type != "Conector")
+        {
+            GameObject newItem = Instantiate(item, handPoint.position, handPoint.rotation);
+            hand.GetComponent<PlayerGrab>().grabbedObject = newItem;
+            newItem.transform.SetParent(handPoint);
+            newItem.GetComponent<Rigidbody>().useGravity = false;
+            newItem.GetComponent<Rigidbody>().isKinematic = true;
+        }
+        else
+        {
+            ConectorUse();
+        }
+    }
+    
+    private void ConectorUse()
+    {
+        
     }
 }

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int id;
     public string type;
     public bool placed = false;
     public GameObject placedInto = null;

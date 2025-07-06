@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3245916549864351812}
   - component: {fileID: 1145702154483772835}
   - component: {fileID: 7196801406103814991}
+  - component: {fileID: -1717063687142807454}
   m_Layer: 0
   m_Name: CabezaRJ45Prefab
   m_TagString: Untagged
@@ -113,3 +114,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.04783018, y: 0.069464035, z: 0.076657385}
   m_Center: {x: -0.0020446628, y: -0.003854599, z: 0.021573616}
+--- !u!114 &-1717063687142807454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5950250306331947042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649f788ae0117bc48ba0467679072fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  type: Conector
+  placed: 0
+  placedInto: {fileID: 0}
+  idealRotation: {x: 0, y: 0, z: 0, w: 1}
+  idealRelativePosition: {x: 0, y: 0, z: 0}
+  isHanded: 0

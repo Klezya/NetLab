@@ -40,6 +40,9 @@ public class InspectorMode : MonoBehaviour
             mainCamera.fieldOfView = defaultFOV;
             cameraLook.mouseSensitivity = cameraLook.defaultMouseSensitivity;
             inspectorHand.SetActive(false);
+
+            colidingPort.GetComponent<Renderer>().material = colidingPort.GetComponent<Port>().portTransparentMaterial;
+            colidingPort = null;
         }
     }
 

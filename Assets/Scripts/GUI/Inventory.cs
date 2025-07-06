@@ -12,13 +12,14 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] GameObject inventoryPanel;
     [SerializeField] GameObject slotHolder;
-    [SerializeField] LayerMask itemLayer;
     private int maxSlots;
     private GameObject[] slots;
 
     // Referencias a la mano
     [SerializeField] private GameObject playerGrabRef;
 
+    // Referencia al input
+    [SerializeField] private PlayerInput playerInput;
 
     void Awake()
     {
@@ -37,12 +38,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
-    void Update()
-    {
-
-    }
-
     public void ToggleInventory(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -52,16 +47,20 @@ public class Inventory : MonoBehaviour
             if (isInventoryOpen)
             {
                 inventoryPanel.SetActive(true);
-                Time.timeScale = 0f; // Pause the game
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+
+                playerInput.actions.FindAction("Grab").Disable(); // Disable the grab/release action when inventory is open
+                playerInput.actions.FindAction("Look").Disable(); // Disable the look action when inventory is open
             }
             else
             {
                 inventoryPanel.SetActive(false);
-                Time.timeScale = 1f; // Resume the game
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+
+                playerInput.actions.FindAction("Grab").Enable(); // Enable the grab/release action when inventory is closed
+                playerInput.actions.FindAction("Look").Enable(); // Enable the look action when inventory is closed
             }
         }
     }
