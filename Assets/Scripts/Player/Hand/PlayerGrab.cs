@@ -26,6 +26,10 @@ public class PlayerGrab : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (isColliding)
+        {
+            return;
+        }
         if (grabbedObject == null && other.gameObject.CompareTag("Graspable"))
         {
             isColliding = true;
@@ -45,6 +49,10 @@ public class PlayerGrab : MonoBehaviour
 
     public void GrabAndRelease(InputAction.CallbackContext context)
     {
+        if (GetComponent<PlayerPlace>().placePoint != null)
+        { 
+            return;
+        }
         if (context.performed && grabbedObject == null && isColliding)
         { //Agarrar el Objeto
 
@@ -54,6 +62,13 @@ public class PlayerGrab : MonoBehaviour
             grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
             grabbedObject.transform.position = handPoint.transform.position;
             grabbedObject.transform.SetParent(handPoint.transform);
+
+            if (grabbedObject.GetComponent<Item>().placed)
+            {
+                grabbedObject.GetComponent<Item>().placed = false;
+                grabbedObject.GetComponent<Item>().placedInto.GetComponent<PlacePoint>().placedObject = null;
+                grabbedObject.GetComponent<Item>().placedInto = null;
+            }
 
 
         }

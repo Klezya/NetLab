@@ -8,7 +8,8 @@ public class CameraLook : MonoBehaviour
 
 
     // Variables manejo de Camara
-    [SerializeField] private float mouseSensitivity = 80f;
+    public float mouseSensitivity = 60f;
+    public float defaultMouseSensitivity = 60f;
     private float xRotation = 0f;
 
 

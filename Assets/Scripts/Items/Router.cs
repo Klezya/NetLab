@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class Router : MonoBehaviour
 {
+    private GameObject[] ports;
+    private int maxPorts;
 
-    public int id;
-    public string type, description;
-    public Sprite icon;
-
-    // Propiedades
-    private int maxPorts, currentEnabledPorts;
-
-    [HideInInspector] public bool isHanded;
-
+    void Start()
+    {
+        maxPorts = transform.childCount;
+        ports = new GameObject[maxPorts];
+        for (int i = 0; i < maxPorts; i++)
+        {
+            ports[i] = transform.GetChild(i).gameObject;
+        }
+    }
 
 
 }

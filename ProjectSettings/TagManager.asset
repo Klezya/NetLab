@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Graspable
   - Hand
+  - PlacePoint
+  - InspectorHand
+  - Port
   layers:
   - Default
   - TransparentFX

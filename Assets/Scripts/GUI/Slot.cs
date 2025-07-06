@@ -1,63 +1,30 @@
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour, IPointerClickHandler
+public class Slot : MonoBehaviour
 {
 
 
-    public GameObject item;
-    public int id;
-    public string type, description;
-    public Sprite icon;
-    public int cantidad;
-    public bool empty;
-    // Manejar contidad
-    public Transform quantityText;
-    public Transform slotIconPanel;
+    [SerializeField] private GameObject item;
+    [SerializeField] private int id;
+    [SerializeField] private string type;
+    [SerializeField] private Transform spawnPoint;
+
 
 
     void Awake()
     {
-        slotIconPanel = transform.GetChild(0);
-        quantityText = transform.GetChild(1);
+
     }
 
-    public void UpdateSlot()
+
+
+    public void OnClick()
     {
-        slotIconPanel.GetComponent<Image>().sprite = icon;
-        if (item.GetComponent<Item>().cantidad > 0)
-        {
-            quantityText.gameObject.SetActive(true);
-            // quantityText.GetComponent<Text>().text = item.GetComponent<Item>().cantidad.ToString();
-        }
-        else if (item.GetComponent<Item>().cantidad <= 0)
-        {
-            quantityText.gameObject.SetActive(false);
-            // quantityText.GetComponent<Text>().text = item.GetComponent<Item>().cantidad.ToString();
-        }
-
+        Debug.Log("Slot clicked: " + item);
+        GameObject newItem = Instantiate(item, spawnPoint.position, spawnPoint.rotation);
     }
-
-    
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (item != null)
-        {
-            Debug.Log("Slot clicked: " + item.name);
-            UseItem();
-        }
-        else
-        {
-            Debug.Log("Slot is empty.");
-        }
-    }
-
-    public void UseItem()
-    {
-
-    }
-
-
 }

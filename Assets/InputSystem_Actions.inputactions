@@ -33,6 +33,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "PlaceDevice",
+                    "type": "Button",
+                    "id": "492a4f6e-690b-4a78-b252-d939d7fbea82",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InspectorMode",
+                    "type": "Button",
+                    "id": "7958c303-6c27-4a75-929f-cb710aa4c43c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "f1ba0d36-48eb-4cd5-b651-1c94a6531f70",
@@ -45,15 +63,6 @@
                     "name": "OpenInventory",
                     "type": "Button",
                     "id": "9a6b03e2-5f29-4960-bc2b-535a6ddcb60a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "AddItem",
-                    "type": "Button",
-                    "id": "d5b4bbee-d885-42a1-a8c8-a8ad89ca673d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -524,12 +533,23 @@
                 },
                 {
                     "name": "",
-                    "id": "216d4e40-b9b5-4e76-a5af-a16d19ef0a88",
+                    "id": "0674bda1-86b6-473e-9293-19cf37c99a20",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaceDevice",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45cd7c43-d1f5-4bbd-bd04-039c8902064d",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AddItem",
+                    "action": "InspectorMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
