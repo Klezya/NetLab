@@ -57,11 +57,12 @@ public class PlayerPlace : MonoBehaviour
     {
         if (placePoint == null) return;
         if (GetComponent<PlayerGrab>().grabbedObject == null) return;
-    
+        if (GetComponent<PlayerGrab>().grabbedObject.GetComponent<Item>().type == "Conector") return;
         if (context.performed)
         {
             // Place the item at the place point
             GameObject itemToPlace = GetComponent<PlayerGrab>().grabbedObject;
+
             itemToPlace.transform.position = placePoint.transform.position + itemToPlace.GetComponent<Item>().idealRelativePosition;
             itemToPlace.transform.rotation = itemToPlace.GetComponent<Item>().idealRotation;
 
@@ -82,7 +83,6 @@ public class PlayerPlace : MonoBehaviour
             // Reset the highlight
             placePoint.GetComponent<Renderer>().material = transparentMaterial;
             placePoint = null;
-
         }
     }
 

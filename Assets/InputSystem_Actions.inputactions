@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ConectPort",
+                    "type": "Button",
+                    "id": "9b42dc35-11e7-4194-b2f1-f9cdcfbde975",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "f1ba0d36-48eb-4cd5-b651-1c94a6531f70",
@@ -550,6 +559,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "InspectorMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "237c9443-25e6-4616-bb74-2df215d62495",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ConectPort",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

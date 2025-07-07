@@ -12,16 +12,6 @@ public class PlayerGrab : MonoBehaviour
     private bool isColliding = false;
     private GameObject collidingObject = null;
 
-    void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
 
 
     void OnTriggerEnter(Collider other)
@@ -49,10 +39,9 @@ public class PlayerGrab : MonoBehaviour
 
     public void GrabAndRelease(InputAction.CallbackContext context)
     {
-        if (GetComponent<PlayerPlace>().placePoint != null)
-        { 
-            return;
-        }
+        if (GetComponent<PlayerPlace>().placePoint != null) return;
+        if (grabbedObject != null && grabbedObject.GetComponent<Item>().type == "Conector") return;
+
         if (context.performed && grabbedObject == null && isColliding)
         { //Agarrar el Objeto
 

@@ -3768,7 +3768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649f788ae0117bc48ba0467679072fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
   type: Switch
   placed: 0
   placedInto: {fileID: 0}

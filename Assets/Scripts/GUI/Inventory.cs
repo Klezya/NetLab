@@ -52,6 +52,7 @@ public class Inventory : MonoBehaviour
 
                 playerInput.actions.FindAction("Grab").Disable(); // Disable the grab/release action when inventory is open
                 playerInput.actions.FindAction("Look").Disable(); // Disable the look action when inventory is open
+                playerInput.actions.FindAction("PlaceDevice").Disable(); // Disable the place action when inventory is open
             }
             else
             {
@@ -61,6 +62,7 @@ public class Inventory : MonoBehaviour
 
                 playerInput.actions.FindAction("Grab").Enable(); // Enable the grab/release action when inventory is closed
                 playerInput.actions.FindAction("Look").Enable(); // Enable the look action when inventory is closed
+                playerInput.actions.FindAction("PlaceDevice").Enable(); // Enable the place action when inventory is closed
             }
         }
     }

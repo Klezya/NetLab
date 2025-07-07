@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DeviceManager : MonoBehaviour
 {
-    
+
     [SerializeField] private GameObject hand;
     [SerializeField] private GameObject handPoint;
     private GameObject grabbedObject;
@@ -22,7 +22,8 @@ public class DeviceManager : MonoBehaviour
     void Update()
     {
         grabbedObject = hand.GetComponent<PlayerGrab>().grabbedObject;
-        if (grabbedObject == null) {
+        if (grabbedObject == null)
+        {
             handPoint.SetActive(true);
             for (int i = 0; i < totalDevices; i++)
             {

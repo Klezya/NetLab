@@ -12,8 +12,8 @@ public class WarningText : MonoBehaviour
     void Awake()
     {
         textMaterial = warningTextObject.color; // Get the initial color of the text
-        defaultColor = warningTextObject.color; 
-
+        defaultColor = warningTextObject.color;
+        textMaterial.a = 0.1f;
     }
 
     // Update is called once per frame
