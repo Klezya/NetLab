@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4482575097664713066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.445
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.277
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.806
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.60256237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70839924
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.32872194
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.16441149
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -105.888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 36.599
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559936614809868252, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -77.828
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043457107519229286, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_Name
+      value: RouterPrefab OnlyView
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043457107519229286, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043457107519229286, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4866308623067811407, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 852330107555665811, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 6248700701374399171, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 2858716192235913575, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 7755427129066821719, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 5782360511807017460, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 660893546639667008, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 4322398538088200735, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 8568400393622946797, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    - {fileID: 2311201114414005014, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9043457107519229286, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7279216427059939748}
+  m_SourcePrefab: {fileID: 100100000, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+--- !u!1 &4878979623087209484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9043457107519229286, guid: a0dd18ae1a4c49a48ae21c40b37ed5e9, type: 3}
+  m_PrefabInstance: {fileID: 4482575097664713066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7279216427059939748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878979623087209484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90eaa174cc51ad040b16a6a43930ede5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Router
